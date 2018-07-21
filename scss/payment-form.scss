@@ -1,0 +1,275 @@
+body {
+  background-color: #12132F;
+  color: #e4e4e4;
+  font-family: Lato;
+  
+  input {
+    font-family: Lato;
+  }
+  
+  .content-wrapper {
+    margin: 0 auto;
+
+    h2 {
+      color: #1EB6B3;
+      text-align: center;
+      margin-top: 100px;
+      margin-bottom: 40px;
+    }
+
+    .form-wrapper {
+      form {
+        fieldset {
+          border-color: #1f2246;
+          border-width: 1px;
+          padding: 0px;
+        
+          &.payment-method {
+            border-radius: 5px 5px 0px 0px;
+            background-color: #171937;
+            
+            .radio-wrapper {
+              position: relative;
+              padding-left: 60px;
+              
+              &:first-child {
+                border-bottom: 1px solid #242431;
+              }
+              
+              input[type=radio] {
+                position: absolute;
+                visibility: hidden;
+                
+                &:checked {
+                  &~ label {
+                    .check {
+                      background-color: #1EB6B3;
+                      
+                      &::before {
+                        background-color: #FFF;
+                      }
+                    }
+                  }
+                }
+              }
+              
+              label {
+                cursor: pointer;
+                display: block;
+                padding: 20px 0px;
+                line-height: 30px;
+                color: transparent;
+                
+                .check {
+                  display: inline-block;
+                  background-color: #80808057;
+                  border: 1px solid #AAAAAA;
+                  border-radius: 100%;
+                  height: 18px;
+                  width: 18px;
+                  position: absolute;
+                  top: 26px;
+                  left: 22px;
+                  
+                  &::before {
+                    display: inline-block;
+                    content: '';
+                    border-radius: 100%;
+                    height: 10px;
+                    width: 10px;
+                    position: absolute;
+                    top: 4px;
+                    left: 4px;
+                  }
+                }
+                
+                &:hover {
+                  .check {
+                    border: 1px solid #FFFFFF;
+                  }
+                }
+              }
+              
+              .icons {
+                position: absolute;
+                top: 14px;
+                left: 60px;
+                
+                img {
+                  width: 40px;
+                }
+              }
+            }
+          }
+          
+          &.creditcard {
+            border-radius: 0px 0px 5px 5px;
+            background-color: #1B1B3F;
+            color: #515577;
+            position: relative;
+            top: -1px;
+            
+            .row {
+              padding: 20px;
+              overflow: hidden;
+              
+              label {
+                padding: 0px 10px 10px 0px;
+                display: inline-block;
+                
+                &.error {
+                  font-style: italic;
+                    color: #861212;
+                    font-size: 12px;
+                }
+              }
+              
+              input {
+                background-color: #1b1c3f;
+                border: none;
+                color: #e4e4e4;
+                font-size: 14px;
+                width: 70%;
+                
+                &:focus {
+                  outline: none;
+                }
+                
+                &::placeholder {
+                  color: #2B2D5C;
+                }
+              }
+              
+              .expire {
+                float: left;
+                width: 50%;
+              }
+              
+              .cvc {
+                float: left;
+                margin-left: 10px;
+                width: 38%;
+              }
+              
+              a {
+                float: right;
+                
+                &::after {
+                  float: right;
+                  font-size: 20px;
+                  color: #20b6b3;
+                  content: "\f05a";
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: 900;
+                }
+              }
+              
+              &:first-child {
+                border-bottom: 1px solid #242431;
+              }
+            }
+            
+            .arrow-down {
+              width: 0;
+              height: 0;
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              border-top: 7px solid #171a37;
+              position: absolute;
+              top: -1px;
+              left: 25px;
+            }
+          }
+        }
+        
+        button {
+          border: none;
+          line-height: 40px;
+          width: 100%;
+          margin-top: 30px;
+          background-color: #1fb6b3;
+          color: #e4e4e4;
+          cursor: pointer;
+          border-radius: 5px;
+          font-size: 14px;
+          outline: none;
+          
+          &:hover {
+            background-color: #007977;
+          }
+          
+          &::before {
+            content: "\f023";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) {
+  body {
+    .content-wrapper {
+      width: 90%;
+      max-width: 600px;
+      
+      .form-wrapper {
+        form {
+          fieldset {
+            &.payment-method {
+              .radio-wrapper {
+                label {
+                  color: #E4E4E4;
+                }
+                
+                .icons {
+                  left: auto;
+                  right: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  body {
+    .content-wrapper {
+      .form-wrapper {
+        form {
+          fieldset {
+            &.payment-method {
+              .radio-wrapper {
+                .icons {
+                  img {
+                    padding-left: 10px;
+                  }
+                }
+              }  
+            }
+            
+            &.creditcard {
+              .row {
+                input {
+                  width: 70%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

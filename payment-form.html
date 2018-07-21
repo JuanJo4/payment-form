@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'/>
+    <meta name='viewport'content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <title>Payment Form</title>
+    <link rel='stylesheet' href='css/payment-form.min.css'/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="js/ccFormat.js"></script>
+    <script src="js/jqcode.js"></script>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <h2>Great, that's £124.97!</h2>
+      
+      <div class="form-wrapper">
+        <form method="post">
+          <fieldset class="payment-method">
+            <div class="radio-wrapper">
+              <input type="radio" id="paypal" name="payment-method" value="paypal" />
+              <label for="paypal">
+                <span class="check"></span>
+                PayPal
+                <div class="icons">
+                  <img src="images/paypal.svg" alt="Paypal">
+                </div>
+              </label>
+            </div>
+            <div class="radio-wrapper">
+              <input type="radio" id="credit" name="payment-method" value="credit" checked />
+              <label for="credit">
+                <span class="check"></span>
+                <span class="icons">
+                  <img src="images/visa.svg" alt="Visa" />
+                  <img src="images/mastercard.svg" alt="Mastercard" />
+                  <img src="images/amex.svg" alt="American Express" />
+                </span>
+                Debit/Credit Card
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="creditcard">
+            <div class="row">
+              <label id="cardnumber">Card Number</label>
+              <input type="text" id="cardnumber" class="ccFormatMonitor" name="cardnumber" value="" placeholder="4111 1111 1111 1111" />
+            </div>
+            
+            <div class="row">
+              <div class="expire">
+                <label for="expiration">Expiry</label>
+                <input type="text" id="expiration" name="expiration" value="" placeholder="MM/YY" maxlength="5" />
+              </div>
+              <div class="cvc">
+                <label for="cvc">CVC</label>
+                <input type="text" id="cvc" name="cvc" value="" placeholder="123" maxlength="3" />
+              </div>
+              <a href="#" title="More Info"></a>
+            </div>
+            
+            <div class="arrow-down"></div>
+          </fieldset>
+          
+          <button name="submit" type="submit" value="submit-true">
+            Finish and pay
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
